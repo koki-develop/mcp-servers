@@ -1,5 +1,6 @@
-import { TodoistApi, type Project } from "@doist/todoist-api-typescript";
+import { TodoistApi } from "@doist/todoist-api-typescript";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { getProjects } from "./projects";
 
 export const todoistServerName = "todoist";
 
@@ -28,13 +29,7 @@ Returns:
 `.trim(),
     {},
     async () => {
-      const projects: Project[] = [];
-      let cursor: string | null = null;
-      do {
-        const response = await api.getProjects({ cursor });
-        projects.push(...response.results);
-        cursor = response.nextCursor;
-      } while (cursor != null);
+      const projects = await getProjects(api);
 
       const content = projects.map((project) => ({
         id: project.id,

@@ -1,6 +1,7 @@
 import { TodoistApi } from "@doist/todoist-api-typescript";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { getProjects, getTasks } from "./projects";
+import { getProjects } from "./lib/projects";
+import { getTasks } from "./lib/tasks";
 import { z } from "zod";
 
 export const todoistServerName = "todoist";

@@ -7,6 +7,14 @@ $ bun install
 ```json
 {
   "mcpServers": {
+    "utilities": {
+      "command": "bun",
+      "args": [
+        "run",
+        "/path/to/mcp-servers",
+        "utilities"
+      ]
+    },
     "todoist": {
       "command": "bun",
       "args": [

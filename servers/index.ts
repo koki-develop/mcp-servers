@@ -1,11 +1,16 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { createTodoistServer, todoistServerName } from "./todoist";
+import { createUtilitiesServer, utilitiesServerName } from "./utilities";
+
+const servers: Record<string, () => McpServer> = {
+  [todoistServerName]: createTodoistServer,
+  [utilitiesServerName]: createUtilitiesServer,
+};
 
 export function createServer(name: string): McpServer {
-  switch (name) {
-    case todoistServerName:
-      return createTodoistServer();
-    default:
-      throw new Error(`Server ${name} not found`);
+  const server = servers[name];
+  if (!server) {
+    throw new Error(`Server ${name} not found`);
   }
+  return server();
 }

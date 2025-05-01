@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "fmt": "biome check --write ."
+    "fmt": "biome check --write --unsafe ."
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.0-beta.2",

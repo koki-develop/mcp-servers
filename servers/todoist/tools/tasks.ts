@@ -1,7 +1,7 @@
-import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { TodoistApi } from "@doist/todoist-api-typescript";
-import { getTasks } from "../lib/tasks";
+import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
+import { getTasks } from "../lib/tasks";
 
 export function setGetTasksTool(
   name: string,

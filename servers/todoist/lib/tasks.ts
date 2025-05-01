@@ -7,7 +7,7 @@ export type GetTasksParameters = {
 
 export async function getTasks(
   api: TodoistApi,
-  args: GetTasksParameters
+  args: GetTasksParameters,
 ): Promise<Task[]> {
   return paginate({
     fetch: (cursor) => api.getTasks({ cursor, projectId: args.projectId }),

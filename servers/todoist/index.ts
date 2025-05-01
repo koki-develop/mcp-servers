@@ -1,8 +1,5 @@
 import { TodoistApi } from "@doist/todoist-api-typescript";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { getProjects } from "./lib/projects";
-import { getTasks } from "./lib/tasks";
-import { z } from "zod";
 import { setGetProjectsTool } from "./tools/projects";
 import { setGetTasksTool } from "./tools/tasks";
 

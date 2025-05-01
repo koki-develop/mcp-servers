@@ -1,11 +1,11 @@
+import type { TodoistApi } from "@doist/todoist-api-typescript";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { getProjects } from "../lib/projects";
-import type { TodoistApi } from "@doist/todoist-api-typescript";
 
 export function setGetProjectsTool(
   name: string,
   server: McpServer,
-  api: TodoistApi
+  api: TodoistApi,
 ) {
   server.tool(
     name,
@@ -32,6 +32,6 @@ Returns:
       return {
         content: [{ type: "text", text: JSON.stringify(content) }],
       };
-    }
+    },
   );
 }

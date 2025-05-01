@@ -1,15 +1,23 @@
 # mcp-servers
 
-To install dependencies:
-
-```bash
-bun install
+```console
+$ bun install
 ```
 
-To run:
-
-```bash
-bun run index.ts
+```json
+{
+  "mcpServers": {
+    "todoist": {
+      "command": "bun",
+      "args": [
+        "run",
+        "/path/to/mcp-servers",
+        "todoist"
+      ],
+      "env": {
+        "TODOIST_API_TOKEN": "<TODOIST_API_TOKEN>"
+      }
+    }
+  }
+}
 ```
-
-This project was created using `bun init` in bun v1.2.10. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

@@ -10,6 +10,6 @@ export function setGetCurrentDatetimeTool(server: McpServer) {
       return {
         content: [{ type: "text", text: now.toLocaleString() }],
       };
-    }
+    },
   );
 }

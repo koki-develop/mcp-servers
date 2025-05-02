@@ -1,8 +1,10 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { createSamariServer, samariServerName } from "./samari";
 import { createTodoistServer, todoistServerName } from "./todoist";
 import { createUtilitiesServer, utilitiesServerName } from "./utilities";
 
 const servers: Record<string, () => McpServer> = {
+  [samariServerName]: createSamariServer,
   [todoistServerName]: createTodoistServer,
   [utilitiesServerName]: createUtilitiesServer,
 };

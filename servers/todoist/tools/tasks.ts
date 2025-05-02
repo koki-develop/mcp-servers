@@ -1,13 +1,13 @@
 import type { TodoistApi } from "@doist/todoist-api-typescript";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { getTasks } from "../lib/tasks";
 import { getSections } from "../lib/sections";
+import { getTasks } from "../lib/tasks";
 
 export function setGetTasksTool(
   name: string,
   server: McpServer,
-  api: TodoistApi
+  api: TodoistApi,
 ) {
   server.tool(
     name,
@@ -53,7 +53,7 @@ Returns:
         duration: task.duration,
         section: (() => {
           const section = sections.find(
-            (section) => section.id === task.sectionId
+            (section) => section.id === task.sectionId,
           );
           if (!section) return null;
           return {
@@ -67,6 +67,6 @@ Returns:
       return {
         content: [{ type: "text", text: JSON.stringify(content) }],
       };
-    }
+    },
   );
 }

@@ -40,6 +40,6 @@ Returns:
       return {
         content: [{ type: "text", text: JSON.stringify(data) }],
       };
-    }
+    },
   );
 }

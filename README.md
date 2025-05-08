@@ -7,12 +7,12 @@ $ bun install
 ```json
 {
   "mcpServers": {
-    "utilities": {
+    "samari": {
       "command": "bun",
       "args": [
         "run",
         "/path/to/mcp-servers",
-        "utilities"
+        "samari"
       ]
     },
     "todoist": {
@@ -25,6 +25,14 @@ $ bun install
       "env": {
         "TODOIST_API_TOKEN": "<TODOIST_API_TOKEN>"
       }
+    },
+    "utilities": {
+      "command": "bun",
+      "args": [
+        "run",
+        "/path/to/mcp-servers",
+        "utilities"
+      ]
     }
   }
 }
